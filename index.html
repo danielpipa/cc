@@ -1,22 +1,33 @@
 <!DOCTYPE html>
 <html>
 <body>
-<button style="font-size: 20vw; width: 100%;" onclick="fun()">Sortear</button>
-<h2 id="name" style="font-size: 20vw; text-align: center;"></h2>
-<h1 id="date" style="font-size: 5vw; text-align: center;"></h1>
+<button id="button" style="font-size: 20vmin; width: 100%;" onclick="fun()">SORTEAR</button>
+<p id="name" style="font-size: 20vmin; text-align: center;"></p>
 <script>
     const name = document.getElementById('name');
     const date = document.getElementById('date');
+    const button = document.getElementById('button');
+    let a = true;
     function fun(){
-        num = Math.random();
-        console.log(num);
-        if (num > .5)
-            name.innerHTML = 'Clara\n';
-        else
-            name.innerHTML = 'Alice\n';
+        if(a){
+            a = false;
+            num = Math.random();
+            console.log(num);
+            if(num > .5)
+                name.innerText = 'CLARA\n';
+            else
+                name.innerHTML = 'ALICE\n';
+            button.innerText = "LIMPAR";
+        }
+        else{
+            a = true;
+            button.innerText = "SORTEAR";
+            name.innerHTML = "";
+        }
+
         
-        const now = new Date();
-        date.innerHTML = now.toISOString();
+        //const now = new Date();
+        //date.innerHTML = now.toISOString();
             //let date = new 
         //paragraph.textContent = text + Date.now().toISOString();
     }
